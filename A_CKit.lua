@@ -32,3 +32,13 @@ function findNearest(mapT, whatT, whereX, whereY)
 
     return nil
 end
+
+--//////////--
+
+function setRandomMap(WMap, seed, mapHeight, mapWidth)
+    for x = 1, mapWidth do
+        for y = 1, mapHeight do
+            x = 1 --change here later
+        end
+    end
+end
