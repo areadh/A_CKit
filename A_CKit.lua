@@ -1,3 +1,8 @@
+-- VALUES --
+
+cellSize = 32
+
+--///////////--
 function findNearest(mapT, whatT, whereX, whereY)
     local signId = 1
     local positions = {}
@@ -35,10 +40,19 @@ end
 
 --//////////--
 
-function setRandomMap(WMap, seed, mapHeight, mapWidth)
+function setRandomMap(whichMap, mapHeight, mapWidth)
     for x = 1, mapWidth do
+        map[x] = {}
         for y = 1, mapHeight do
-            x = 1 --change here later
+            map[x][y] = {heat = math.random(1, 255)}
+        end
+    end
+end
+
+function drawMap(map)
+    for x = 1, #map do
+        for y = 1, #map[x] do
+            love.graphics.rectangle("fill", x * cellSize, y * cellSize, cellSize, cellSize)
         end
     end
 end
